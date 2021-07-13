@@ -1,0 +1,608 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0">Pengurusan Vendor</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-store-alt text-dark"> </i> </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-xl-4 text-center">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">
+                                Terkontrak
+                            </h5>
+                            <span class="h2 font-weight-bold mb-0 text-success"> 64% </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 text-center">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">
+                                Tidak tersenarai
+                            </h5>
+
+                            <span class="h2 font-weight-bold mb-0 text-danger"> 45% </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 text-center">
+            <div class="card card-stats">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">
+                                Pendaftaran sah
+                            </h5>
+                            <span class="h2 font-weight-bold mb-0 text-primary"> 49.7% </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="h3 mb-0">Kadar Pematuhan Kontrak Mengikut Kategori Vendor</h5>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-default btn-sm">Panggil</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class=" table-responsive">
+                        <table class=" table align-items-center table-flush">
+                            <thead class=" thead-light">
+                                <tr>
+                                    <th class=" sort" data-sort="kategori" scope="col">Kategori & Vendor Top</th>
+
+                                    <th class=" sort" data-sort="number" scope="col"># vendor</th>
+
+                                    <th class=" sort" data-sort="dikontrak" scope="col">
+                                        % Vendor dikontrak
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class=" list">
+                                <tr>
+                                    <td class=" kategori">Kategori 6</td>
+                                    <td class="number">28</td>
+                                    <td>
+                                        <div class=" d-flex align-items-center">
+                                            <span class=" completion mr-2"> 25% </span>
+
+                                            <div>
+                                                <div class=" progress">
+                                                    <progressbar type="success" [value]="25">
+                                                    </progressbar>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class=" kategori">Kategori 6</td>
+                                    <td class="number">28</td>
+                                    <td>
+                                        <div class=" d-flex align-items-center">
+                                            <span class=" completion mr-2"> 95% </span>
+
+                                            <div>
+                                                <div class=" progress">
+                                                    <progressbar type="danger" [value]="95">
+                                                    </progressbar>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class=" kategori">Kategori 6</td>
+                                    <td class="number">28</td>
+                                    <td>
+                                        <div class=" d-flex align-items-center">
+                                            <span class=" completion mr-2"> 55% </span>
+
+                                            <div>
+                                                <div class=" progress">
+                                                    <progressbar type="info" [value]="55">
+                                                    </progressbar>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class=" kategori">Kategori 6</td>
+                                    <td class="number">28</td>
+                                    <td>
+                                        <div class=" d-flex align-items-center">
+                                            <span class=" completion mr-2"> 76% </span>
+
+                                            <div>
+                                                <div class=" progress">
+                                                    <progressbar type="secondary" [value]="76">
+                                                    </progressbar>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class=" kategori">Kategori 6</td>
+                                    <td class="number">28</td>
+                                    <td>
+                                        <div class=" d-flex align-items-center">
+                                            <span class=" completion mr-2"> 64% </span>
+
+                                            <div>
+                                                <div class=" progress">
+                                                    <progressbar type="default" [value]="64">
+                                                    </progressbar>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Cari Vendor</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Kategori</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Pilih</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Skala</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Pilih</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-default">Cari</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="h3 mb-0">Senarai Vendor</h5>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <button class="btn btn-default btn-sm" (click)="openModal(baru)">Tambah Baru</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="dataTables_wrapper">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_length" id="datatable_length">
+                                    <label>
+                                        papar
+                                        <select name="datatable_length" aria-controls="datatable"
+                                            class="form-control form-control-sm" (change)="entriesChange($event)">
+                                            <option value="5" [selected]="entries==5">5</option>
+                                            <option value="10" [selected]="entries==10">10</option>
+                                            <option value="20" [selected]="entries==20">20</option>
+                                            <option value="-1" [selected]="entries==-1">All</option>
+                                        </select>
+                                        rekod
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="datatable_filter" class="dataTables_filter">
+                                    <label>
+                                        <input type="search" class="form-control form-control-sm"
+                                            placeholder="Search records" aria-controls="datatable"
+                                            (keyup)="filterTable($event)" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ngx-datatable class="bootstrap selection-cell" [columnMode]="'force'" [headerHeight]="50"
+                            [footerHeight]="50" [rowHeight]="'auto'" [limit]="entries != -1 ? entries:undefined"
+                            [rows]="temp" (activate)="onActivate($event)">
+
+                            <ngx-datatable-column name="idvendor">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>ID Vendor</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="nama">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Nama Syarikat</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Kategori"></ngx-datatable-column>
+                            <ngx-datatable-column name="Skala"></ngx-datatable-column>
+                            <ngx-datatable-column name="pengalaman">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Pengalaman (tahun)</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="tindakan">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <a class="btn btn-sm btn-default">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash text-white"></i>
+                                    </a>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #baru>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Daftar Baru
+        </h6>
+
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button" (click)="closeModal()">
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Maklumat Umum</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Nama Syarikat</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Nama Pemilik</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">No. SSM</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Tarikh Berdaftar</label>
+                                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">No. Tel</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Email</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Alamat Berdaftar</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Jenis Pemilik/Syarikat</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Milikan tunggal/enterprise</option>
+                                    <option>Perkongsian</option>
+                                    <option>Koperasi</option>
+                                    <option>Sendirian berhad/Sdn Bhd</option>
+                                    <option>Berhad/awam berhad</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">No. MOF</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Jenis Vendor Berdaftar</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">No. Faks</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Dokumen Wajib</ng-template>
+                    <form class="mb-4">
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Sijil SSM</label>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input class="form-control" type="text" disabled="disabled"
+                                        value="Sijil SSM - Syarikat A">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-download"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button" (click)="openModal2(addon)">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-upload"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Sijil Kementerian
+                                Kewangan</label>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input class="form-control" type="text" disabled="disabled"
+                                        value="Sijil Kementerian Kewangan - Syarikat A">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-download"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button" (click)="openModal2(addon)">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-upload"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Sijil GST/SST</label>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input class="form-control" type="text" disabled="disabled"
+                                        value="Sijil GST / SST - Syarikat A">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-download"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button" (click)="openModal2(addon)">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-upload"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Borang 9 & 13</label>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input class="form-control" type="text" disabled="disabled"
+                                        value="Borang 9 & 13 - Syarikat A">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-download"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button" (click)="openModal2(addon)">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-upload"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Borang 24</label>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input class="form-control" type="text" disabled="disabled"
+                                        value="Borang 24 - Syarikat A">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-download"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button" (click)="openModal2(addon)">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-upload"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Borang 49</label>
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <input class="form-control" type="text" disabled="disabled"
+                                        value="Borang 49 - Syarikat A">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-download"></i></span>
+                                    </button>
+                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                        <span class="btn-inner--icon"><i class="fas fa-file-upload"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-icon btn-2 btn-neutral mt-3" type="button" (click)="openModal2(addon)">
+                            <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+                        </button>
+                    </form>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button class="btn btn-danger" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Bayaran & Kelulusan</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Pendaftaran</label>
+                                    <select class="form-control">
+                                        <option>Aktif</option>
+                                        <option>Tidak Aktif</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Kelulusan Pendaftaran</label>
+                                    <div class="custom-control custom-radio mb-3">
+                                        <input type="radio" id="customRadio1" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Lulus</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">Gagal</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="example-date-input" class="form-control-label">Tarikh luput</label>
+                                    <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                                </div>
+                                <button type="button" class="btn btn-success btn-lg btn-block">Hantar Peringatan Bayaran</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Catatan:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                        rows="4"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger mt-3" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-success mt-3" mat-button (click)="confirm()">
+                            Simpan
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+
+</ng-template>
+
+<ng-template #addon>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Muat naik fail</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+            <label class="custom-file-label" for="customFileLang">Pilih fail</label>
+          </div>
+      </form>
+      <button type="button" class="btn btn-danger mt-3" (click)="closeModal2()">Tutup</button>
+    </div>
+  </ng-template>

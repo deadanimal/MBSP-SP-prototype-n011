@@ -1,0 +1,589 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0">Pengurusan Iklan</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-city text-dark"> </i> </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Jumlah RFx mengikut bulan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="pi1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Jenis RFx dalam setahun</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="pi2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col-lg-6 mt-3 mt-lg-0">
+                            <h5 class="h3 mb-0">Jadual Iklan</h5>
+                        </div>
+                        <div class=" col-lg-6 mt-3 mt-lg-0 text-lg-right">
+                            <a class=" fullcalendar-btn-prev btn btn-sm btn-neutral" href="javascript:void(0)"
+                                (click)="calendar.next()">
+                                <i class=" fas fa-angle-left"> </i>
+                            </a>
+
+                            <a class=" fullcalendar-btn-next btn btn-sm btn-neutral" href="javascript:void(0)"
+                                (click)="calendar.prev()">
+                                <i class=" fas fa-angle-right"> </i>
+                            </a>
+
+                            <a class=" btn btn-sm btn-neutral" data-calendar-view="month" href="javascript:void(0)"
+                                (click)="changeView('dayGridMonth')">
+                                Month
+                            </a>
+
+                            <a class=" btn btn-sm btn-neutral" data-calendar-view="basicWeek" href="javascript:void(0)"
+                                (click)="changeView('dayGridWeek')">
+                                Week
+                            </a>
+
+                            <a class=" btn btn-sm btn-neutral" data-calendar-view="basicDay" href="javascript:void(0)"
+                                (click)="changeView('dayGridDay')">
+                                Day
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class=" calendar" data-toggle="calendar" id="calendar"></div>
+                </div>
+            </div>
+            <div aria-hidden="true" aria-labelledby="new-event-label" class=" modal fade" id="new-event" role="dialog"
+                tabindex="-1">
+                <div class=" modal-dialog modal-dialog-centered modal-secondary" role="document">
+                    <ng-template #modalAdd>
+                        <div class=" modal-body">
+                            <form class=" new-event--form">
+                                <div class=" form-group">
+                                    <label class=" form-control-label"> Event title </label>
+
+                                    <input class=" form-control form-control-alternative new-event--title"
+                                        id="new-event--title" placeholder="Event Title" type="text"
+                                        (change)="getNewEventTitle($event)" />
+                                </div>
+
+                                <div class=" form-group mb-0">
+                                    <label class=" form-control-label d-block mb-3">
+                                        Status color
+                                    </label>
+
+                                    <div class=" btn-group btn-group-toggle btn-group-colors event-tag"
+                                        data-toggle="buttons">
+                                        <label class=" btn bg-info" [ngClass]="{ active: radios === 'bg-info' }">
+                                            <input autocomplete="off" checked="checked" name="event-tag" type="radio"
+                                                value="bg-info" (click)="radios = 'bg-info'" />
+                                        </label>
+
+                                        <label class=" btn bg-warning" [ngClass]="{ active: radios === 'bg-warning' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-warning"
+                                                (click)="radios = 'bg-warning'" />
+                                        </label>
+
+                                        <label class=" btn bg-danger" [ngClass]="{ active: radios === 'bg-danger' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-danger"
+                                                (click)="radios = 'bg-danger'" />
+                                        </label>
+
+                                        <label class=" btn bg-success" [ngClass]="{ active: radios === 'bg-success' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-success"
+                                                (click)="radios = 'bg-success'" />
+                                        </label>
+
+                                        <label class=" btn bg-default" [ngClass]="{ active: radios === 'bg-default' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-default"
+                                                (click)="radios = 'bg-default'" />
+                                        </label>
+
+                                        <label class=" btn bg-primary" [ngClass]="{ active: radios === 'bg-primary' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-primary"
+                                                (click)="radios = 'bg-primary'" />
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <input class=" new-event--start" type="hidden" />
+
+                                <input class=" new-event--end" type="hidden" />
+                            </form>
+                        </div>
+
+                        <div class=" modal-footer">
+                            <button class=" btn btn-primary new-event--add" type="submit" (click)="addNewEvent()">
+                                Add event
+                            </button>
+
+                            <button (click)="addModal.hide()" class=" btn btn-link ml-auto" data-dismiss="modal"
+                                type="button">
+                                Close
+                            </button>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+            <div aria-hidden="true" aria-labelledby="edit-event-label" class=" modal fade" id="edit-event" role="dialog"
+                tabindex="-1">
+                <div class=" modal-dialog modal-dialog-centered modal-secondary" role="document">
+                    <ng-template #modalEdit>
+                        <div class=" modal-body">
+                            <form class=" edit-event--form">
+                                <div class=" form-group">
+                                    <label class=" form-control-label"> Event title </label>
+
+                                    <input class=" form-control form-control-alternative edit-event--title"
+                                        placeholder="Event Title" type="text" value="{{ eventTitle }}"
+                                        (change)="getNewEventTitle($event)" />
+                                </div>
+
+                                <div class=" form-group">
+                                    <label class=" form-control-label d-block mb-3">
+                                        Status color
+                                    </label>
+
+                                    <div class=" btn-group btn-group-toggle btn-group-colors event-tag mb-0"
+                                        data-toggle="buttons">
+                                        <label class=" btn bg-info" [ngClass]="{ active: radios === 'bg-info' }">
+                                            <input autocomplete="off" checked="checked" name="event-tag" type="radio"
+                                                value="bg-info" (click)="radios = 'bg-info'" />
+                                        </label>
+
+                                        <label class=" btn bg-warning" [ngClass]="{ active: radios === 'bg-warning' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-warning"
+                                                (click)="radios = 'bg-warning'" />
+                                        </label>
+
+                                        <label class=" btn bg-danger" [ngClass]="{ active: radios === 'bg-danger' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-danger"
+                                                (click)="radios = 'bg-danger'" />
+                                        </label>
+
+                                        <label class=" btn bg-success" [ngClass]="{ active: radios === 'bg-success' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-success"
+                                                (click)="radios = 'bg-success'" />
+                                        </label>
+
+                                        <label class=" btn bg-default" [ngClass]="{ active: radios === 'bg-default' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-default"
+                                                (click)="radios = 'bg-default'" />
+                                        </label>
+
+                                        <label class=" btn bg-primary" [ngClass]="{ active: radios === 'bg-primary' }">
+                                            <input autocomplete="off" name="event-tag" type="radio" value="bg-primary"
+                                                (click)="radios = 'bg-primary'" />
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class=" form-group">
+                                    <label class=" form-control-label"> Description </label>
+
+                                    <textarea
+                                        class=" form-control form-control-alternative edit-event--description textarea-autosize"
+                                        placeholder="Event Desctiption" value="{{ eventDescription }}"
+                                        (change)="getNewEventDescription($event)"></textarea>
+
+                                    <i class=" form-group--bar"> </i>
+                                </div>
+
+                                <input class=" edit-event--id" type="hidden" />
+                            </form>
+                        </div>
+
+                        <div class=" modal-footer">
+                            <button class=" btn btn-primary" data-calendar="update" (click)="updateEvent()">
+                                Update
+                            </button>
+
+                            <button class=" btn btn-danger" data-calendar="delete" (click)="deleteEventSweetAlert()">
+                                Delete
+                            </button>
+
+                            <button class=" btn btn-link ml-auto" data-dismiss="modal" (click)="editModal.hide()">
+                                Close
+                            </button>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Cari RFx</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Jenis RFx</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Kategori</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>ICT</option>
+                                    <option>M&E</option>
+                                    <option>Sivil</option>
+                                    <option>Arkitek</option>
+                                    <option>Landskap</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Tarikh RFx</label>
+                                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Status Iklan</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Buku</option>
+                                    <option>Tutup</option>
+                                    <option>Draf</option>
+                                    <option>Arkib</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="h3 mb-0">Senarai RFx</h5>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <button class="btn btn-default btn-sm" (click)="openModal(baru)">Baru</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="dataTables_wrapper">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_length" id="datatable_length">
+                                    <label>
+                                        papar
+                                        <select name="datatable_length" aria-controls="datatable"
+                                            class="form-control form-control-sm" (change)="entriesChange($event)">
+                                            <option value="5" [selected]="entries==5">5</option>
+                                            <option value="10" [selected]="entries==10">10</option>
+                                            <option value="20" [selected]="entries==20">20</option>
+                                            <option value="-1" [selected]="entries==-1">All</option>
+                                        </select>
+                                        rekod
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="datatable_filter" class="dataTables_filter">
+                                    <label>
+                                        <input type="search" class="form-control form-control-sm"
+                                            placeholder="Search records" aria-controls="datatable"
+                                            (keyup)="filterTable($event)" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ngx-datatable class="bootstrap selection-cell" [columnMode]="'force'" [headerHeight]="50"
+                            [footerHeight]="50" [rowHeight]="'auto'" [limit]="entries != -1 ? entries:undefined"
+                            [rows]="temp" (activate)="onActivate($event)">
+
+                            <ngx-datatable-column name="jenis">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Jenis RFx</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Kategori"></ngx-datatable-column>
+                            <ngx-datatable-column name="tarikh">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Tarikh RFx</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="status">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <span *ngIf="row.status == '1'" class="badge badge-pill badge-success">Lulus</span>
+                                    <span *ngIf="row.status == '2'" class="badge badge-pill badge-danger">Gagal</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="tindakan">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <a class="btn btn-sm btn-default">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash text-white"></i>
+                                    </a>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #baru>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Daftar Baru
+        </h6>
+
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button" (click)="closeModal()">
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Maklumat Umum</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Jenis RFx</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sebutharga</option>
+                                    <option>Tender</option>
+                                    <option>Rundingan terus</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Tajuk RFx</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Kategori</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>ICT</option>
+                                    <option>M&E</option>
+                                    <option>Sivil</option>
+                                    <option>Arkitek</option>
+                                    <option>Landskap</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Pemilik Projek</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Dokumen RFx</ng-template>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label class="form-control-label">Muat naik dokumen pendaftaran (jika ada)</label>
+                            <form>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                    <label class="custom-file-label" for="customFileLang">Muat naik fail</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label class="form-control-label">Muat naik dokumen utama</label>
+                            <form>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                    <label class="custom-file-label" for="customFileLang">Muat naik fail</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Jenis Dokumen</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Berbayar</option>
+                                        <option>Percuma</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Harga Dokumen
+                                        (RM)</label>
+                                    <input class="form-control" type="text">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button class="btn btn-danger" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Maklumat Iklan</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input" class="form-control-label">Tarikh
+                                        buka</label>
+                                    <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00"
+                                        id="example-datetime-local-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input"
+                                        class="form-control-label">Taklimat/Lawatan tapak</label>
+                                    <div class="custom-control custom-radio mb-3">
+                                        <input type="radio" id="customRadio1" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Ada</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">Tiada</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input" class="form-control-label">Tarikh
+                                        tutup</label>
+                                    <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00"
+                                        id="example-datetime-local-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input" class="form-control-label">Tarikh
+                                        taklimat/lawatan tapak</label>
+                                    <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00"
+                                        id="example-datetime-local-input">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="fourthFormGroup">
+                <form [formGroup]="fourthFormGroup">
+                    <ng-template matStepLabel>Pegawai Sebutharga</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input" class="form-control-label">Tarikh
+                                        buka dokumen cadangan</label>
+                                    <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00"
+                                        id="example-datetime-local-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Pegawai sebutharga</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Kumpulan 1</option>
+                                        <option>Kumpulan 2</option>
+                                        <option>Kumpulan 3</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-info mt-3">
+                            Arkib
+                        </button>
+                        <button class="btn btn-info mt-3 mr-auto">
+                            Simpanan
+                        </button>
+                        <button class="btn btn-danger mt-3" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-success mt-3" mat-button (click)="confirm()">
+                            Hantar
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</ng-template>

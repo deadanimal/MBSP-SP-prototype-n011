@@ -1,0 +1,569 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0">Analisa RFx</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-file-invoice text-dark"> </i> </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)" class="text-dark"> Pengurusan RFx </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Status RFx tahun 2021</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="ana1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Jenis RFx tahun setahun</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="ana2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class=" h5 text-muted mb-1 widget-calendar-year"></div>
+                    <div class=" h3 mb-0 widget-calendar-day"></div>
+                </div>
+                <div class=" card-body">
+                    <div data-toggle="widget-calendar" id="widget-calendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h5 text-muted mb-1">Senarai perkara</h5>
+                    <h5 class="h3 mb-0">To do list</h5>
+                </div>
+                <div class="card-body">
+                    <ul class=" list-group list-group-flush" data-toggle="checklist">
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-success">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">Call with Dave</h5>
+
+                                    <small> 10:30 AM </small>
+                                </div>
+
+                                <div>
+                                    <div class=" custom-control custom-checkbox custom-checkbox-success">
+                                        <input checked="checked" class=" custom-control-input" id="chk-todo-task-1"
+                                            type="checkbox" />
+
+                                        <label class=" custom-control-label" for="chk-todo-task-1">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-warning">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">Lunch meeting</h5>
+
+                                    <small> 10:30 AM </small>
+                                </div>
+
+                                <div>
+                                    <div class=" custom-control custom-checkbox custom-checkbox-warning">
+                                        <input class=" custom-control-input" id="chk-todo-task-2" type="checkbox" />
+
+                                        <label class=" custom-control-label" for="chk-todo-task-2">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-info">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">Argon Dashboard Launch</h5>
+
+                                    <small> 10:30 AM </small>
+                                </div>
+
+                                <div>
+                                    <div class=" custom-control custom-checkbox custom-checkbox-info">
+                                        <input class=" custom-control-input" id="chk-todo-task-3" type="checkbox" />
+
+                                        <label class=" custom-control-label" for="chk-todo-task-3">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-danger">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">Winter Hackaton</h5>
+
+                                    <small> 10:30 AM </small>
+                                </div>
+
+                                <div>
+                                    <div class=" custom-control custom-checkbox custom-checkbox-danger">
+                                        <input checked="checked" class=" custom-control-input" id="chk-todo-task-4"
+                                            type="checkbox" />
+
+                                        <label class=" custom-control-label" for="chk-todo-task-4">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="row mt-4 d-flex justify-content-center">
+                        <div class="col-lg-10">
+                           <button type="button" class="btn btn-neutral btn-lg btn-block" (click)="openModal(todo)">Tambah perkara</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Cari RFx</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Jenis RFx</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Kategori</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sila pilih</option>
+                                    <option>ICT</option>
+                                    <option>M&E</option>
+                                    <option>Sivil</option>
+                                    <option>Arkitek</option>
+                                    <option>Landskap</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-date-input" class="form-control-label">Tarikh RFx</label>
+                                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Status RFx</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sila pilih</option>
+                                    <option>Dibuka</option>
+                                    <option>Belum dibuka</option>
+                                    <option>Batal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Senarai RFx</h5>
+                </div>
+                <div class="card-body">
+                    <div class="dataTables_wrapper">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_length" id="datatable_length">
+                                    <label>
+                                        papar
+                                        <select name="datatable_length" aria-controls="datatable"
+                                            class="form-control form-control-sm" (change)="entriesChange($event)">
+                                            <option value="5" [selected]="entries==5">5</option>
+                                            <option value="10" [selected]="entries==10">10</option>
+                                            <option value="20" [selected]="entries==20">20</option>
+                                            <option value="-1" [selected]="entries==-1">All</option>
+                                        </select>
+                                        rekod
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="datatable_filter" class="dataTables_filter">
+                                    <label>
+                                        <input type="search" class="form-control form-control-sm"
+                                            placeholder="Search records" aria-controls="datatable"
+                                            (keyup)="filterTable($event)" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ngx-datatable class="bootstrap selection-cell" [columnMode]="'force'" [headerHeight]="50"
+                            [footerHeight]="50" [rowHeight]="'auto'" [limit]="entries != -1 ? entries:undefined"
+                            [rows]="temp" (activate)="onActivate($event)">
+
+                            <ngx-datatable-column name="jenis">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Jenis RFx</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Kategori"></ngx-datatable-column>
+                            <ngx-datatable-column name="tarikh">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Tarikh RFx</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="status">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <span *ngIf="row.status == '1'" class="badge badge-pill badge-success">Dibuka</span>
+                                    <span *ngIf="row.status == '2'" class="badge badge-pill badge-info">Belum
+                                        dibuka</span>
+                                    <span *ngIf="row.status == '3'" class="badge badge-pill badge-danger">Batal</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="tindakan">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <a class="btn btn-sm btn-default" (click)="openModal(baru)">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash text-white"></i>
+                                    </a>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #baru>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            View
+        </h6>
+
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button" (click)="closeModal()">
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Maklumat Umum</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Jenis RFx</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sebutharga</option>
+                                    <option>Tender</option>
+                                    <option>Rundingan terus</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Tajuk RFx</label>
+                                <input class="form-control" type="text" value="type in Title" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Kategori</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>ICT</option>
+                                    <option>M&E</option>
+                                    <option>Sivil</option>
+                                    <option>Arkitek</option>
+                                    <option>Landskap</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Pemilik Projek</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Analisa Tawaran</ng-template>
+                    <div class="row my-3">
+                        <div class="col-lg-6">
+                            <h5 class="h3">Senarai Vendor</h5>
+                        </div>
+                        <div class="col-lg-3">
+                            <h5 class="h3">Tawaran Harga (RM)</h5>
+                        </div>
+                        <div class="col-lg-3">
+                            <h5 class="h3">Prestasi Teknikal</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #1</label>
+                                <input class="form-control" type="text" value="Megah Amanah Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label"></label>
+                                <input class="form-control" type="text" value="480,000.00">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="example-text-input" class="form-control-label"></label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio1">Memuaskan</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Tidak memuaskan</label>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #2</label>
+                                <input class="form-control" type="text" value="Impak Maksima Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label"></label>
+                                <input class="form-control" type="text" value="338,000.00">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="example-text-input" class="form-control-label"></label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio21" name="customRadio2" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio21">Memuaskan</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio22" name="customRadio2" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio22">Tidak memuaskan</label>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #3</label>
+                                <input class="form-control" type="text" value="Serba Boleh Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label"></label>
+                                <input class="form-control" type="text"  value="208,000.00">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="example-text-input" class="form-control-label"></label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio31" name="customRadio3" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio31">Memuaskan</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio32" name="customRadio3" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio32">Tidak memuaskan</label>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #4</label>
+                                <input class="form-control" type="text" value="Dinamik Bina Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label"></label>
+                                <input class="form-control" type="text" value="350,000.00">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="example-text-input" class="form-control-label"></label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio41" name="customRadio4" class="custom-control-input" >
+                                <label class="custom-control-label" for="customRadio41">Memuaskan</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio42" name="customRadio4" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio42">Tidak memuaskan</label>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #5</label>
+                                <input class="form-control" type="text" value="KPHM Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label"></label>
+                                <input class="form-control" type="text" value="180,000.00">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="example-text-input" class="form-control-label"></label>
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio51" name="customRadio5" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio51">Memuaskan</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio52" name="customRadio5" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio52">Tidak memuaskan</label>
+                              </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-neutral">+</button>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button class="btn btn-danger" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Prebiu</ng-template>
+                    <div class="row">
+                        <div class="col">
+                            <div class="chart">
+                                <div class="amchart" id="ra11"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button class="btn btn-danger mt-3" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-success mt-3" mat-button (click)="confirm()">
+                            Hantar
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</ng-template>
+
+<ng-template #todo>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Perkara baru
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="registerForm">
+            <div class="form-group">
+                <label class="form-control-label">Perkara</label>
+                <input 
+                  class="form-control"
+                  placeholder=""
+                  type="text"
+                >
+            </div>
+            <div class="form-group">
+                <label for="example-time-input" class="form-control-label">Waktu</label>
+                <input class="form-control" type="time" value="10:30:00" id="example-time-input">
+              </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button 
+            class="btn btn-success"
+            type="button"
+            (click)="confirm()"
+            [disabled]="!registerForm.valid"
+        >
+            Simpan
+        </button>
+
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Tutup
+        </button>
+    </div>
+</ng-template>

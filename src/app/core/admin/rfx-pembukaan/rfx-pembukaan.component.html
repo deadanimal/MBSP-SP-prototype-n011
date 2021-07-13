@@ -1,0 +1,455 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0">Pembukaan RFx</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-file-invoice text-dark"> </i> </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)" class="text-dark"> Pengurusan RFx </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Jumlah RFx mengikut bulan</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="buka1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Jenis RFx dalam setahun</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="buka2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Jumlah vendor layak vs jumlah penghantaran</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="buka3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Status RFx</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="buka4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Cari RFx</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Jenis RFx</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Kategori</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sila pilih</option>
+                                    <option>ICT</option>
+                                    <option>M&E</option>
+                                    <option>Sivil</option>
+                                    <option>Arkitek</option>
+                                    <option>Landskap</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="example-date-input" class="form-control-label">Tarikh RFx</label>
+                                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Status RFx</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sila pilih</option>
+                                    <option>Dibuka</option>
+                                    <option>Belum dibuka</option>
+                                    <option>Batal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h5 class="h3 mb-0">Senarai RFx</h5>
+                </div>
+                <div class="card-body">
+                    <div class="dataTables_wrapper">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="dataTables_length" id="datatable_length">
+                                    <label>
+                                        papar
+                                        <select name="datatable_length" aria-controls="datatable"
+                                            class="form-control form-control-sm" (change)="entriesChange($event)">
+                                            <option value="5" [selected]="entries==5">5</option>
+                                            <option value="10" [selected]="entries==10">10</option>
+                                            <option value="20" [selected]="entries==20">20</option>
+                                            <option value="-1" [selected]="entries==-1">All</option>
+                                        </select>
+                                        rekod
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="datatable_filter" class="dataTables_filter">
+                                    <label>
+                                        <input type="search" class="form-control form-control-sm"
+                                            placeholder="Search records" aria-controls="datatable"
+                                            (keyup)="filterTable($event)" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ngx-datatable class="bootstrap selection-cell" [columnMode]="'force'" [headerHeight]="50"
+                            [footerHeight]="50" [rowHeight]="'auto'" [limit]="entries != -1 ? entries:undefined"
+                            [rows]="temp" (activate)="onActivate($event)">
+
+                            <ngx-datatable-column name="jenis">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Jenis RFx</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Kategori"></ngx-datatable-column>
+                            <ngx-datatable-column name="tarikh">
+                                <ng-template ngx-datatable-header-template>
+                                    <span>Tarikh RFx</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="status">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <span *ngIf="row.status == '1'" class="badge badge-pill badge-success">Dibuka</span>
+                                    <span *ngIf="row.status == '2'" class="badge badge-pill badge-info">Belum
+                                        dibuka</span>
+                                    <span *ngIf="row.status == '3'" class="badge badge-pill badge-danger">Batal</span>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="tindakan">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <a class="btn btn-sm btn-default" (click)="openModal(baru)">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash text-white"></i>
+                                    </a>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #baru>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            View
+        </h6>
+
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button" (click)="closeModal()">
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Maklumat Umum</ng-template>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Jenis RFx</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Sebutharga</option>
+                                    <option>Tender</option>
+                                    <option>Rundingan terus</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Tajuk RFx</label>
+                                <input class="form-control" type="text" value="type in Title" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Kategori</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>ICT</option>
+                                    <option>M&E</option>
+                                    <option>Sivil</option>
+                                    <option>Arkitek</option>
+                                    <option>Landskap</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Pemilik Projek</label>
+                                <input class="form-control" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Saringan Peserta</ng-template>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #1</label>
+                                <input class="form-control" type="text" value="Megah Amanah Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio1">Layak</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Tidak layak</label>
+                              </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Catatan:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #2</label>
+                                <input class="form-control" type="text" value="Impak Maksima Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio21" name="customRadio2" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio21">Layak</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio22" name="customRadio2" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio22">Tidak layak</label>
+                              </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Catatan:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #3</label>
+                                <input class="form-control" type="text" value="Serba Boleh Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio31" name="customRadio3" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio31">Layak</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio32" name="customRadio3" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio32">Tidak layak</label>
+                              </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Catatan:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #4</label>
+                                <input class="form-control" type="text" value="Dinamik Bina Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio41" name="customRadio4" class="custom-control-input" >
+                                <label class="custom-control-label" for="customRadio41">Layak</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio42" name="customRadio4" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio42">Tidak layak</label>
+                              </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Catatan:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Vendor #5</label>
+                                <input class="form-control" type="text" value="KPHM Sdn Bhd">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio51" name="customRadio5" class="custom-control-input" checked="checked">
+                                <label class="custom-control-label" for="customRadio51">Layak</label>
+                              </div>
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio52" name="customRadio5" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio52">Tidak layak</label>
+                              </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Catatan:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-neutral">+</button>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button class="btn btn-danger" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-default" mat-button matStepperNext>
+                            Seterusnya
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <ng-template matStepLabel>Pengesahan</ng-template>
+                    <div class="form-group">
+                        <label class="form-control-label">Pegawai 1</label>
+                        <input class="form-control" type="text" value="Ali bin Abu" />
+                    </div>
+                    <label class="form-control-label">Muat naik tanda tangan:</label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="dropzone dropzone-single" data-toggle="dropzone" data-dropzone-url="http://">
+                                <div class="fallback">
+                                  <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="dropzoneBasicUpload" />
+                                    <label class="custom-file-label" for="dropzoneBasicUpload">Muat naik tanda tangan</label>
+                                  </div>
+                                </div>
+                                <div class="dz-preview dz-preview-single">
+                                  <div class="dz-preview-cover">
+                                    <img class="dz-preview-img" src="..." alt="..." data-dz-thumbnail="" />
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Pegawai 2</label>
+                        <input class="form-control" type="text" value="Anis binti Salleh" />
+                    </div>
+                    <label class="form-control-label">Muat naik tanda tangan:</label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="dropzone dropzone-single2" data-toggle="dropzone" data-dropzone-url="http://">
+                                <div class="fallback">
+                                  <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="dropzoneBasicUpload" />
+                                    <label class="custom-file-label" for="dropzoneBasicUpload">Muat naik tanda tangan</label>
+                                  </div>
+                                </div>
+                                <div class="dz-preview dz-preview-single2">
+                                  <div class="dz-preview-cover">
+                                    <img class="dz-preview-img" src="..." alt="..." data-dz-thumbnail="" />
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button class="btn btn-danger mt-3" mat-button matStepperPrevious>
+                            Kembali
+                        </button>
+                        <button class="btn btn-success mt-3" mat-button (click)="confirm()">
+                            Hantar
+                        </button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</ng-template>
